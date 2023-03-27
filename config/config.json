@@ -1,0 +1,5 @@
+{
+  "bitcode": "built-in.bc",
+  "knowledge": "~/SyzDescribe/config/knowledge.json",
+  "version": "v5.12"
+}
