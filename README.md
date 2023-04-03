@@ -8,6 +8,7 @@ git clone https://github.com/seclab-ucr/SyzDescribe.git
 cd SyzDescribe
 bash ./script/build.bash
 ```
+
 ## Run
 ```shell
 build/tools/SyzDescribe/SyzDescribe --config_json=config.json
@@ -31,9 +32,14 @@ refer to `https://github.com/ZHYfeng/Generate_Linux_Kernel_Bitcode/tree/master/v
 
 
 ## Example
-
 Generated syscall descriptions: `https://github.com/seclab-ucr/SyzDescribe_Syscall_Description`
 
 
 ## Others
 Ported DIFUZE used in paper: `https://github.com/ZHYfeng/PortedDIFUZE`
+
+## Next
+1. Because the bitcodes generated from the Linux v6.1 are different from the Linux v5.12.
+There will be some additional changes coming for the Linux v6.1, so please stay tuned for updates.
+
+2. A more powerful and general tool would come in the future.
