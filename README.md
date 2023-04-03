@@ -23,6 +23,7 @@ build/tools/SyzDescribe/SyzDescribe --config_json=config.json
     // the version of the kernel, used for debug info
 }
 ```
+The generated syscall descriptions are `syz_describe_*.txt`, which can directly used in syzkaller based on [doc](https://github.com/google/syzkaller/blob/master/docs/syscall_descriptions.md).
 
 ## Linked LLVM Bitcode for Linux Kernel
 refer to `https://github.com/ZHYfeng/Generate_Linux_Kernel_Bitcode/tree/master/v5.12`
@@ -35,4 +36,4 @@ Generated syscall descriptions: `https://github.com/seclab-ucr/SyzDescribe_Sysca
 
 
 ## Others
-Ported DIFUZE: `https://github.com/ZHYfeng/PortedDIFUZE`
+Ported DIFUZE used in paper: `https://github.com/ZHYfeng/PortedDIFUZE`
