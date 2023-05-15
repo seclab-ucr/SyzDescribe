@@ -1,0 +1,3 @@
+[submodule "SyzDescribe_Syscall_Description"]
+	path = SyzDescribe_Syscall_Description
+	url = git@github.com:ZHYfeng/SyzDescribe_Syscall_Description.git
