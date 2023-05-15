@@ -48,3 +48,23 @@ Ported DIFUZE used in paper: [https://github.com/ZHYfeng/PortedDIFUZE](https://g
 There will be some additional changes coming for the Linux v6.1, so please stay tuned for updates.
 
 2. A more powerful and general tool would come in the future.
+
+
+## Publication
+
+```
+@inproceedings{conf/sp/SyzDescribe23,
+  author       = {Yu Hao and
+                  Guoren Li and
+                  Xiaochen Zou and
+                  Weiteng Chen and
+                  Shitong Zhu and
+                  Zhiyun Qian and
+                  Ardalan Amiri Sani},
+  title        = {SyzDescribe: Principled, Automated, Static Generation of Syscall Descriptions for Kernel Drivers},
+  booktitle    = {44rd {IEEE} Symposium on Security and Privacy, {SP} 2022, San Francisco,
+                  CA, USA, May 22-25, 2023},
+  publisher    = {{IEEE}},
+  year         = {2023},
+}
+```
