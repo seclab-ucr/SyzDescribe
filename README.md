@@ -37,7 +37,7 @@ refer to [https://github.com/ZHYfeng/Generate_Linux_Kernel_Bitcode/tree/master/v
 
 
 ## Example Results
-Generated syscall descriptions: [https://github.com/seclab-ucr/SyzDescribe_Syscall_Description](https://github.com/seclab-ucr/SyzDescribe_Syscall_Description)
+Generated syscall descriptions: SyzDescribe_Syscall_Description
 
 
 ## Others
