@@ -1,6 +1,26 @@
-# I am still working on the open source of our work. Please keep an eye on this repo.
-
 # SyzDescribe
+
+# Still working on the open source. Keep an eye on this repo.
+
+## SyzDescribe: Principled, Automated, Static Generation of Syscall Descriptions for Kernel Drivers
+
+[PDF](https://www.cs.ucr.edu/~zhiyunq/pub/oakland23_syzdescribe.pdf)
+```
+@inproceedings{conf/sp/SyzDescribe23,
+  author       = {Yu Hao and
+                  Guoren Li and
+                  Xiaochen Zou and
+                  Weiteng Chen and
+                  Shitong Zhu and
+                  Zhiyun Qian and
+                  Ardalan Amiri Sani},
+  title        = {SyzDescribe: Principled, Automated, Static Generation of Syscall Descriptions for Kernel Drivers},
+  booktitle    = {44rd {IEEE} Symposium on Security and Privacy, {SP} 2023, San Francisco,
+                  CA, USA, May 22-25, 2023},
+  publisher    = {{IEEE}},
+  year         = {2023},
+}
+```
 
 ## Build
 Requirements: Ubuntu 22.04
@@ -45,26 +65,7 @@ Ported DIFUZE used in paper: [https://github.com/ZHYfeng/PortedDIFUZE](https://g
 
 ## Next
 1. Because the bitcodes generated from the Linux v6.1 are different from the Linux v5.12.
-There will be some additional changes coming for the Linux v6.1, so please stay tuned for updates.
+There will be some additional changes coming for the Linux v6.1.
 
-2. A more powerful and general tool would come in the future.
+1. A more powerful and general tool based on under constrained symbolic execution would come in the future.
 
-
-## Publication
-
-```
-@inproceedings{conf/sp/SyzDescribe23,
-  author       = {Yu Hao and
-                  Guoren Li and
-                  Xiaochen Zou and
-                  Weiteng Chen and
-                  Shitong Zhu and
-                  Zhiyun Qian and
-                  Ardalan Amiri Sani},
-  title        = {SyzDescribe: Principled, Automated, Static Generation of Syscall Descriptions for Kernel Drivers},
-  booktitle    = {44rd {IEEE} Symposium on Security and Privacy, {SP} 2022, San Francisco,
-                  CA, USA, May 22-25, 2023},
-  publisher    = {{IEEE}},
-  year         = {2023},
-}
-```
