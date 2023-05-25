@@ -1,6 +1,10 @@
 # SyzDescribe
 
-# Still working on the open source. Keep an eye on this repo.
+## Next
+1. Because the bitcodes generated from the Linux v6.1 are different from the Linux v5.12.
+There will be some additional changes coming for the Linux v6.1.
+2. A more powerful and general SyzDescribe based on under constrained symbolic execution.
+3. To support net device drivers. 
 
 ## SyzDescribe: Principled, Automated, Static Generation of Syscall Descriptions for Kernel Drivers
 
@@ -31,6 +35,8 @@ cd SyzDescribe
 bash ./script/build.bash
 ```
 
+Note: The version of LLVM/Clang is 14.
+
 ## Run
 ```shell
 build/tools/SyzDescribe/SyzDescribe --config_json=config.json
@@ -56,16 +62,14 @@ refer to [https://github.com/ZHYfeng/Generate_Linux_Kernel_Bitcode/tree/master/v
 **I would suggest to generate syscall descriptions for each `drivers/*/built-in.bc`.**
 
 
-## Example Results
-Generated syscall descriptions: SyzDescribe_Syscall_Description
+## Generated syscall descriptions
 
+SyzDescribe/SyzDescribe_Syscall_Description for v5.12.
+
+[SyzDescribe_Syscall_Description](https://github.com/ZHYfeng/SyzDescribe_Syscall_Description) for all.
 
 ## Others
 Ported DIFUZE used in paper: [https://github.com/ZHYfeng/PortedDIFUZE](https://github.com/ZHYfeng/PortedDIFUZE)
 
-## Next
-1. Because the bitcodes generated from the Linux v6.1 are different from the Linux v5.12.
-There will be some additional changes coming for the Linux v6.1.
 
-1. A more powerful and general tool based on under constrained symbolic execution would come in the future.
 
