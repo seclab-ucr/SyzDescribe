@@ -89,7 +89,9 @@ void sd::Manager::analysis() {
     this->k->print(this->work_dir + "knowledge.json");
     this->k->make_checker();
     this->t_module->k = this->k;
-    this->template_klee = config_json["template_analysis"].get<std::string>();
+    if (config_json.contains("template_analysis") && config_json["template_analysis"].is_string()) {
+        this->template_klee = config_json["template_analysis"].get<std::string>();
+    }
 
     yhao_log(1, "start our");
     time(&start);
