@@ -85,7 +85,7 @@ bool TypeInitializerPass::doFinalization(Module *M) {
 
 void TypeInitializerPass::BuildTypeStructMap() {
     // build GlobalTypes based on TypeValueMap and VnameToTypenameMap
-    for (auto const &P1 : TypeValueMap) {
+    for (auto const &P1: TypeValueMap) {
         if (VnameToTypenameMap.find(P1.second) != VnameToTypenameMap.end()) {
             Ctx->GlobalTypes.insert(pair<Type *, string>(P1.first, VnameToTypenameMap[P1.second]));
             //OP<<*P1.first<<"\t"<<VnameToTypenameMap[P1.second]<<"\n";

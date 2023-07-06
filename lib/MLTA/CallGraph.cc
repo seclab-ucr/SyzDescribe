@@ -57,7 +57,7 @@ void CallGraphPass::findCalleesWithType(CallInst *CI, FuncSet &S) {
     //
 
     auto &CS = llvm::cast<llvm::CallBase>(*CI);
-    for (Function *F : Ctx->AddressTakenFuncs) {
+    for (Function *F: Ctx->AddressTakenFuncs) {
 
         // VarArg
         if (F->getFunctionType()->isVarArg()) {
@@ -96,12 +96,14 @@ void CallGraphPass::findCalleesWithType(CallInst *CI, FuncSet &S) {
             // makes the equality evaluation of two types from
             // two modules very hard, which is actually done
             // at link time by the linker.
-            while (DefinedTy->isPointerTy() && ActualTy->isPointerTy() && DefinedTy->getNumContainedTypes() && ActualTy->getNumContainedTypes()) {
+            while (DefinedTy->isPointerTy() && ActualTy->isPointerTy() && DefinedTy->getNumContainedTypes() &&
+                   ActualTy->getNumContainedTypes()) {
                 DefinedTy = DefinedTy->getNonOpaquePointerElementType();
                 ActualTy = ActualTy->getNonOpaquePointerElementType();
             }
             if (DefinedTy->isStructTy() && ActualTy->isStructTy() &&
-                    (get_real_structure_name(DefinedTy->getStructName().str()) == get_real_structure_name(ActualTy->getStructName().str())))
+                (get_real_structure_name(DefinedTy->getStructName().str()) ==
+                 get_real_structure_name(ActualTy->getStructName().str())))
                 continue;
             if (DefinedTy->isIntegerTy() && ActualTy->isIntegerTy() &&
                 DefinedTy->getIntegerBitWidth() == ActualTy->getIntegerBitWidth())
@@ -156,14 +158,14 @@ void CallGraphPass::unrollLoops(Function *F) {
             LP = LPL.front();
             LPL.pop_front();
             vector<Loop *> SubLPs = LP->getSubLoops();
-            for (auto SubLP : SubLPs) {
+            for (auto SubLP: SubLPs) {
                 LPSet.insert(SubLP);
                 LPL.push_back(SubLP);
             }
         }
     }
 
-    for (Loop *LP : LPSet) {
+    for (Loop *LP: LPSet) {
 
         // Get the header,latch block, exiting block of every loop
         BasicBlock *HeaderB = LP->getHeader();
@@ -173,7 +175,7 @@ void CallGraphPass::unrollLoops(Function *F) {
 
         LP->getLoopLatches(LatchBS);
 
-        for (BasicBlock *LatchB : LatchBS) {
+        for (BasicBlock *LatchB: LatchBS) {
             if (!HeaderB || !LatchB) {
                 OP << "ERROR: Cannot find Header Block or Latch Block\n";
                 continue;
@@ -383,7 +385,8 @@ bool CallGraphPass::typeConfineInCast(CastInst *CastI) {
         return true;
     }
 
-    if (!FromTy->isPointerTy() || !ToTy->isPointerTy() || !FromTy->getNumContainedTypes() || ! ToTy->getNumContainedTypes())
+    if (!FromTy->isPointerTy() || !ToTy->isPointerTy() || !FromTy->getNumContainedTypes() ||
+        !ToTy->getNumContainedTypes())
         return false;
     Type *EToTy = dyn_cast<PointerType>(ToTy)->getNonOpaquePointerElementType();
     Type *EFromTy = dyn_cast<PointerType>(FromTy)->getNonOpaquePointerElementType();
@@ -414,7 +417,7 @@ void CallGraphPass::transitType(Type *ToTy, Type *FromTy,
 void CallGraphPass::funcSetIntersection(FuncSet &FS1, FuncSet &FS2,
                                         FuncSet &FS) {
     FS.clear();
-    for (auto F : FS1) {
+    for (auto F: FS1) {
         if (FS2.find(F) != FS2.end())
             FS.insert(F);
     }
@@ -530,7 +533,7 @@ bool CallGraphPass::findCalleesWithMLTA(CallInst *CI, FuncSet &FS) {
             unsigned CT = LT.front();
             LT.pop_front();
 
-            for (auto H : typeTransitMap[CT]) {
+            for (auto H: typeTransitMap[CT]) {
                 FS2 = typeFuncsMap[hashIdxHash(H, FieldIdx)];
                 FST.clear();
                 funcSetIntersection(FS1, FS2, FST);
@@ -591,7 +594,7 @@ bool CallGraphPass::doInitialization(Module *M) {
 
 
     // Iterate functions and instructions
-    for (Function &F : *M) {
+    for (Function &F: *M) {
 
         //if (F.empty())
         //	continue;
@@ -647,7 +650,7 @@ bool CallGraphPass::doModulePass(Module *M) {
 #endif
 
         // Collect callers and callees
-        for (auto &i : instructions(F)) {
+        for (auto &i: instructions(F)) {
             // Map callsite to possible callees.
             if (CallInst *CI = dyn_cast<CallInst>(&i)) {
 
@@ -663,7 +666,7 @@ bool CallGraphPass::doModulePass(Module *M) {
                     findCalleesWithType(CI, FS);
 #endif
 
-                    for (Function *Callee : FS)
+                    for (Function *Callee: FS)
                         Ctx->Callers[Callee].insert(CI);
 
                     // Save called values for future uses.

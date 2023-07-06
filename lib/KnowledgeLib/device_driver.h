@@ -10,92 +10,90 @@
 #include "checker.h"
 
 namespace sd {
-    class entry_function;
-    class device_driver;
+class entry_function;
 
-    class cmd_info {
-    public:
-        llvm::Instruction *i{};
-        uint64_t value{};
-        llvm::BasicBlock *b{};
-        std::map<llvm::Value *, llvm::Type *> in_types;
-        std::map<llvm::Value *, llvm::Type *> out_types;
-        bool non_open = false;
-        device_driver *dd{};
+class device_driver;
 
-        std::string generate_resource_name();
+class cmd_info {
+ public:
+  llvm::Instruction *i{};
+  uint64_t value{};
+  llvm::BasicBlock *b{};
+  std::map<llvm::Value *, llvm::Type *> in_types;
+  std::map<llvm::Value *, llvm::Type *> out_types;
+  bool non_open = false;
+  device_driver *dd{};
 
-        // statistic
-        bool in_entry_function = false;
-        bool in_indirect_call = false;
-    };
+  std::string generate_resource_name();
 
-    class device_driver {
-    public:
-        device_driver() {
-            no_cmd = new cmd_info();
-        };
+  // statistic
+  bool in_entry_function = false;
+  bool in_indirect_call = false;
+};
 
-        void set_kind();
+class device_driver {
+ public:
+  device_driver() { no_cmd = new cmd_info(); };
 
-        [[nodiscard]] bool is_only_driver() const;
+  void set_kind();
 
-        void update_structure_type();
+  [[nodiscard]] bool is_only_driver() const;
 
-        std::string print();
+  void update_structure_type();
 
-        // the id for each driver
-        std::string get_id();
+  std::string print();
 
-        std::string get_id_hash();
+  // the id for each driver
+  std::string get_id();
 
-        // whether the two device driver are the similar
-        std::string get_id_real_hash();
+  std::string get_id_hash();
 
-        std::string get_resource();
+  // whether the two device driver are the similar
+  std::string get_id_real_hash();
 
-        bool operator<(const device_driver &rhs) const;
+  std::string get_resource();
 
-        bool operator>(const device_driver &rhs) const;
+  bool operator<(const device_driver &rhs) const;
 
-        bool operator<=(const device_driver &rhs) const;
+  bool operator>(const device_driver &rhs) const;
 
-        bool operator>=(const device_driver &rhs) const;
+  bool operator<=(const device_driver &rhs) const;
 
-    public:
-        std::string linux_kernel_version;
-        int64_t kind = 0;
+  bool operator>=(const device_driver &rhs) const;
 
-        checker_result_ops *ops{};
-        std::vector<checker_result_string *> name;
-        std::vector<checker_result_number *> number;
-        std::vector<checker_result *> file_install;
-        std::vector<checker_result_number *> file_fd;
+ public:
+  std::string linux_kernel_version;
+  int64_t kind = 0;
 
-        // cmd and arg
-        std::map<uint64_t, cmd_info *> cmd;
-        cmd_info *no_cmd{};
-        std::set<llvm::StructType *> structures;
-        std::map<llvm::StructType *, std::string> structure_name;
+  checker_result_ops *ops{};
+  std::vector<checker_result_string *> name;
+  std::vector<checker_result_number *> number;
+  std::vector<checker_result *> file_install;
+  std::vector<checker_result_number *> file_fd;
 
-        entry_function *parent = nullptr;
-        cmd_info *non_open_parent = nullptr;
+  // cmd and arg
+  std::map<uint64_t, cmd_info *> cmd;
+  cmd_info *no_cmd{};
+  std::set<llvm::StructType *> structures;
+  std::map<llvm::StructType *, std::string> structure_name;
 
-        // id based on parent and call chain
-        // different device driver in source code
-        std::string id;
-        std::string id_hash;
+  entry_function *parent = nullptr;
+  cmd_info *non_open_parent = nullptr;
 
-        // id based on the ops and whether they have different function pointers
-        // different device driver in template
-        std::string id_real_hash;
+  // id based on parent and call chain
+  // different device driver in source code
+  std::string id;
+  std::string id_hash;
 
-        std::string resource;
+  // id based on the ops and whether they have different function pointers
+  // different device driver in template
+  std::string id_real_hash;
 
-        std::map<std::string, entry_function *> syscalls;
-        std::set<llvm::Function *> entries;
-    };
-}
+  std::string resource;
 
+  std::map<std::string, entry_function *> syscalls;
+  std::set<llvm::Function *> entries;
+};
+}  // namespace sd
 
-#endif //INC_2021_TEMPLATE_DEVICE_DRIVER_H
+#endif  // INC_2021_TEMPLATE_DEVICE_DRIVER_H
