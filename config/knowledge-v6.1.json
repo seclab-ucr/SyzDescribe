@@ -402,6 +402,15 @@
                 "8-fmt": false
               },
               {
+                "1-file": "drivers/gpu/drm/drm_drv.c",
+                "2-name": "drm_dev_alloc",
+                "4-object": 0,
+                "5-field": false,
+                "6-value": 1,
+                "7-offset": 27,
+                "8-fmt": false
+              },
+              {
                 "1-file": "drivers/gpu/drm/tiny/simpledrm.c",
                 "2-name": "simpledrm_device_create",
                 "4-object": 0,
@@ -424,6 +433,15 @@
                 "1-file": "drivers/gpu/drm/drm_drv.c",
                 "2-name": "__devm_drm_dev_alloc",
                 "4-object": 1,
+                "5-field": false,
+                "6-value": 1,
+                "7-offset": 21,
+                "8-fmt": false
+              },
+              {
+                "1-file": "drivers/gpu/drm/drm_drv.c",
+                "2-name": "drm_dev_alloc",
+                "4-object": 0,
                 "5-field": false,
                 "6-value": 1,
                 "7-offset": 21,

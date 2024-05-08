@@ -436,23 +436,39 @@ void sd::T_module::find_module_init_function() {
 
   std::string str;
   auto ga = this->llvm_module->getNamedAlias(module_name);
-  if (ga == nullptr) {
-    return;
+  if (ga != nullptr) {
+      auto func = llvm::cast<llvm::Function>(ga->getAliasee());
+      if (func == nullptr) {
+        return;
+      }
+      auto fv = module_init_function[module_name]->f;
+      auto it = init_function.begin(), ie = init_function.end();
+      while (it != ie && fv->find(func) != fv->end()) {
+        if (get_real_function_name(*it) == get_real_function_name(func)) {
+          func = *it;
+        }
+        it++;
+      }
+      yhao_log(debug, info + "real function_name: " + func->getName().str());
+      fv->insert(func);
+      return;
   }
-  auto func = llvm::cast<llvm::Function>(ga->getAliasee());
-  if (func == nullptr) {
-    return;
+
+  auto func = this->llvm_module->getFunction(module_name);
+  if (func != nullptr) {
+      auto fv = module_init_function[module_name]->f;
+      auto it = init_function.begin(), ie = init_function.end();
+      while (it != ie && fv->find(func) != fv->end()) {
+        if (get_real_function_name(*it) == get_real_function_name(func)) {
+          func = *it;
+        }
+        it++;
+      }
+      yhao_log(debug, info + "real function_name: " + func->getName().str());
+      fv->insert(func);
+      return;
   }
-  auto fv = module_init_function[module_name]->f;
-  auto it = init_function.begin(), ie = init_function.end();
-  while (it != ie && fv->find(func) != fv->end()) {
-    if (get_real_function_name(*it) == get_real_function_name(func)) {
-      func = *it;
-    }
-    it++;
-  }
-  yhao_log(debug, info + "real function_name: " + func->getName().str());
-  fv->insert(func);
+
 }
 
 void sd::T_module::find_init_and_exit_function() {
