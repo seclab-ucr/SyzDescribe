@@ -3,6 +3,8 @@
 //
 
 #include "Manager.h"
+#include <cstdint>
+#include <string>
 
 #include "../AnalysisLib/ioctl_cmd_type.h"
 #include "../KnowledgeLib/device_driver.h"
@@ -884,6 +886,7 @@ int64_t sd::Manager::get_function_by_index(sd::checker_result_ops *cr0,
   ret = this->t_module->find_ops_structure(cr0->ops_structure, cr0->ops_name,
                                            &ops);
   if (ret) {
+    yhao_log(debug, "not find ops");
     return 1;
   }
 
@@ -901,6 +904,7 @@ int64_t sd::Manager::get_function_by_index(sd::checker_result_ops *cr0,
   }
 
   if (index == -2) {
+    yhao_log(debug, "index == -2");
     return 1;
   }
 
@@ -932,6 +936,7 @@ int64_t sd::Manager::get_function_by_index(sd::checker_result_ops *cr0,
     yhao_print(debug, fp1->print, str);
     yhao_log(debug, "get_function_by_index: fail: " + std::to_string(index) +
                         ": " + str);
+    yhao_dump(debug, cs->print, str);
     return 1;
   }
   *fp = fp2;
@@ -944,18 +949,22 @@ int64_t sd::Manager::get_function_by_syscall(sd::checker_result_ops *cr0,
                                              llvm::Function **fp) const {
   std::string str;
   int64_t ret;
+  int64_t debug = -1;
 
   K_variable *v;
   ret = this->k->find_k_variable(cr0->structure, cr0->offset, &v);
   if (ret) {
+    yhao_log(debug, "this->k->find_k_variable(cr0->structure, cr0->offset, &v);");
     return ret;
   }
   if (v->functions_index.find(syscall) == v->functions_index.end()) {
+    yhao_log(debug, "v->functions_index.find(syscall) == v->functions_index.end()");
     return 1;
   }
   *index = v->functions_index[syscall];
   ret = get_function_by_index(cr0, *index, fp);
   if (ret) {
+    yhao_log(debug, "get_function_by_index(cr0, *index, fp);");
     return ret;
   }
   return 0;

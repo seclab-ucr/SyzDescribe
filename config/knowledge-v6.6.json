@@ -1,0 +1,677 @@
+{
+  "device": {
+    "1-name": "device",
+    "2-structure": "struct.device",
+    "3-dev_name": {
+      "1-offset": 0,
+      "2-function": [
+        {
+          "1-file": "lib/kobject.c",
+          "2-name": "kobject_set_name_vargs",
+          "4-object": 0,
+          "5-field": true,
+          "6-value": 1,
+          "7-offset": -2,
+          "8-fmt": true
+        },
+        {
+          "1-file": "lib/kobject.c",
+          "2-name": "kobject_set_name",
+          "4-object": 0,
+          "5-field": true,
+          "6-value": 1,
+          "7-offset": -2,
+          "8-fmt": true
+        },
+        {
+          "1-file": "lib/kobject.c",
+          "2-name": "kobject_add_varg",
+          "4-object": 0,
+          "5-field": true,
+          "6-value": 2,
+          "7-offset": -2,
+          "8-fmt": true
+        },
+        {
+          "1-file": "lib/kobject.c",
+          "2-name": "kobject_add",
+          "4-object": 0,
+          "5-field": true,
+          "6-value": 2,
+          "7-offset": -2,
+          "8-fmt": true
+        },
+        {
+          "1-file": "lib/kobject.c",
+          "2-name": "kobject_init_and_add",
+          "4-object": 0,
+          "5-field": true,
+          "6-value": 3,
+          "7-offset": -2,
+          "8-fmt": true
+        },
+        {
+          "1-file": "drivers/base/core.c",
+          "2-name": "dev_set_name",
+          "4-object": 0,
+          "5-field": false,
+          "6-value": 1,
+          "7-offset": -2,
+          "8-fmt": true
+        },
+        {
+          "1-file": "drivers/base/core.c",
+          "2-name": "device_create",
+          "4-object": -1,
+          "5-field": false,
+          "6-value": 4,
+          "7-offset": -2,
+          "8-fmt": true
+        },
+        {
+          "1-file": "drivers/base/core.c",
+          "2-name": "device_create_with_groups",
+          "4-object": -1,
+          "5-field": false,
+          "6-value": 5,
+          "7-offset": -2,
+          "8-fmt": true
+        },
+        {
+          "1-file": "drivers/base/core.c",
+          "2-name": "device_create_groups_vargs",
+          "4-object": -1,
+          "5-field": false,
+          "6-value": 5,
+          "7-offset": -2,
+          "8-fmt": true
+        }
+      ],
+      "3-structure": "",
+      "4-ioctl": -2,
+      "4-open": -2,
+      "4-read": -2,
+      "4-write": -2
+    },
+    "4-dev_type": {
+      "1-offset": 26,
+      "2-function": [
+        {
+          "1-file": "drivers/base/core.c",
+          "2-name": "device_create",
+          "4-object": -1,
+          "5-field": false,
+          "6-value": 2,
+          "7-offset": -2,
+          "8-fmt": false
+        },
+        {
+          "1-file": "drivers/base/core.c",
+          "2-name": "device_create_with_groups",
+          "4-object": -1,
+          "5-field": false,
+          "6-value": 2,
+          "7-offset": -2,
+          "8-fmt": false
+        },
+        {
+          "1-file": "drivers/base/core.c",
+          "2-name": "device_create_groups_vargs",
+          "4-object": -1,
+          "5-field": false,
+          "6-value": 2,
+          "7-offset": -2,
+          "8-fmt": false
+        }
+      ],
+      "3-structure": "",
+      "4-ioctl": -2,
+      "4-open": -2,
+      "4-read": -2,
+      "4-write": -2
+    }
+  },
+  "driver": [
+    {
+      "0-major_value": -2,
+      "1-name": "char",
+      "2-structure": "struct.cdev",
+      "3-dri_ops": {
+        "1-offset": 2,
+        "2-function": [
+          {
+            "1-file": "fs/char_dev.c",
+            "2-name": "register_chrdev",
+            "4-object": -2,
+            "5-field": false,
+            "6-value": 2,
+            "7-offset": -2,
+            "8-fmt": false
+          },
+          {
+            "1-file": "fs/char_dev.c",
+            "2-name": "__register_chrdev",
+            "4-object": -2,
+            "5-field": false,
+            "6-value": 4,
+            "7-offset": -2,
+            "8-fmt": false
+          },
+          {
+            "1-file": "fs/char_dev.c",
+            "2-name": "cdev_init",
+            "4-object": 0,
+            "5-field": false,
+            "6-value": 1,
+            "7-offset": -2,
+            "8-fmt": false
+          }
+        ],
+        "3-structure": "%struct.file_operations",
+        "4-ioctl": 9,
+        "4-open": 13,
+        "4-read": 2,
+        "4-write": 3
+      },
+      "4-dri_type": {
+        "1-offset": 4,
+        "2-function": [
+          {
+            "1-file": "fs/char_dev.c",
+            "2-name": "cdev_add",
+            "4-object": 0,
+            "5-field": false,
+            "6-value": 1,
+            "7-offset": -2,
+            "8-fmt": false
+          },
+          {
+            "1-file": "fs/char_dev.c",
+            "2-name": "cdev_device_add",
+            "4-object": 0,
+            "5-field": false,
+            "6-value": 1,
+            "7-offset": 26,
+            "8-fmt": false
+          }
+        ],
+        "3-structure": "",
+        "4-ioctl": -2,
+        "4-open": -2,
+        "4-read": -2,
+        "4-write": -2
+      },
+      "5-dri_major": {
+        "1-offset": -2,
+        "2-function": [
+          {
+            "1-file": "fs/char_dev.c",
+            "2-name": "register_chrdev",
+            "4-object": -2,
+            "5-field": false,
+            "6-value": 0,
+            "7-offset": -2,
+            "8-fmt": false
+          },
+          {
+            "1-file": "fs/char_dev.c",
+            "2-name": "__register_chrdev",
+            "4-object": -2,
+            "5-field": false,
+            "6-value": 0,
+            "7-offset": -2,
+            "8-fmt": false
+          }
+        ],
+        "3-structure": "",
+        "4-ioctl": -2,
+        "4-open": -2,
+        "4-read": -2,
+        "4-write": -2
+      },
+      "6-dri_minor": {
+        "1-offset": -2,
+        "2-function": [
+          {
+            "1-file": "fs/char_dev.c",
+            "2-name": "__register_chrdev",
+            "4-object": -2,
+            "5-field": false,
+            "6-value": 1,
+            "7-offset": -2,
+            "8-fmt": false
+          }
+        ],
+        "3-structure": "",
+        "4-ioctl": -2,
+        "4-open": -2,
+        "4-read": -2,
+        "4-write": -2
+      },
+      "8-key_dereference_obj": {
+        "1-name": "def_chr_fops",
+        "2-open": 14
+      },
+      "9-sub": [
+        {
+          "0-major_value": 10,
+          "1-name": "misc",
+          "2-structure": "struct.miscdevice",
+          "3-dri_ops": {
+            "1-offset": 2,
+            "2-function": [
+              {
+                "1-file": "drivers/char/misc.c",
+                "2-name": "misc_register",
+                "4-object": 0,
+                "5-field": false,
+                "6-value": 0,
+                "7-offset": 2,
+                "8-fmt": false
+              }
+            ],
+            "3-structure": "%struct.file_operations",
+            "4-ioctl": 9,
+            "4-open": 13,
+            "4-read": 2,
+            "4-write": 3
+          },
+          "6-dri_minor": {
+            "1-offset": 0,
+            "2-function": [
+              {
+                "1-file": "drivers/char/misc.c",
+                "2-name": "misc_register",
+                "4-object": 0,
+                "5-field": false,
+                "6-value": 0,
+                "7-offset": 0,
+                "8-fmt": false
+              }
+            ],
+            "3-structure": "",
+            "4-ioctl": -2,
+            "4-open": -2,
+            "4-read": -2,
+            "4-write": -2
+          },
+          "7-dri_name": {
+            "1-offset": 1,
+            "2-function": [
+              {
+                "1-file": "drivers/char/misc.c",
+                "2-name": "misc_register",
+                "4-object": 0,
+                "5-field": false,
+                "6-value": 0,
+                "7-offset": 1,
+                "8-fmt": false
+              }
+            ],
+            "3-structure": "",
+            "4-ioctl": -2,
+            "4-open": -2,
+            "4-read": -2,
+            "4-write": -2
+          },
+          "8-key_dereference_obj": {
+            "1-name": "misc_fops",
+            "2-open": 14
+          }
+        },
+        {
+          "0-major_value": 180,
+          "1-name": "usb",
+          "2-structure": "struct.usb_class_driver",
+          "3-dri_ops": {
+            "1-offset": 2,
+            "2-function": [
+              {
+                "1-file": "drivers/usb/core/file.c",
+                "2-name": "usb_register_dev",
+                "4-object": 1,
+                "5-field": false,
+                "6-value": 1,
+                "7-offset": 2,
+                "8-fmt": false
+              }
+            ],
+            "3-structure": "%struct.file_operations",
+            "4-ioctl": 9,
+            "4-open": 13,
+            "4-read": 2,
+            "4-write": 3
+          },
+          "6-dri_minor": {
+            "1-offset": 3,
+            "2-function": [
+              {
+                "1-file": "drivers/usb/core/file.c",
+                "2-name": "usb_register_dev",
+                "4-object": 1,
+                "5-field": false,
+                "6-value": 1,
+                "7-offset": 3,
+                "8-fmt": false
+              }
+            ],
+            "3-structure": "",
+            "4-ioctl": -2,
+            "4-open": -2,
+            "4-read": -2,
+            "4-write": -2
+          },
+          "7-dri_name": {
+            "1-offset": 0,
+            "2-function": [
+              {
+                "1-file": "drivers/usb/core/file.c",
+                "2-name": "usb_register_dev",
+                "4-object": 1,
+                "5-field": false,
+                "6-value": 1,
+                "7-offset": 0,
+                "8-fmt": false
+              }
+            ],
+            "3-structure": "",
+            "4-ioctl": -2,
+            "4-open": -2,
+            "4-read": -2,
+            "4-write": -2
+          },
+          "8-key_dereference_obj": {
+            "1-name": "usb_fops",
+            "2-open": 14
+          }
+        },
+        {
+          "0-major_value": 226,
+          "1-name": "drm",
+          "2-structure": "struct.drm_driver",
+          "3-dri_ops": {
+            "1-offset": 31,
+            "2-function": [
+              {
+                "1-file": "drivers/gpu/drm/drm_drv.c",
+                "2-name": "__devm_drm_dev_alloc",
+                "4-object": 1,
+                "5-field": false,
+                "6-value": 1,
+                "7-offset": 26,
+                "8-fmt": false
+              },
+              {
+                "1-file": "drivers/gpu/drm/drm_drv.c",
+                "2-name": "drm_dev_alloc",
+                "4-object": 0,
+                "5-field": false,
+                "6-value": 0,
+                "7-offset": 26,
+                "8-fmt": false
+              },
+              {
+                "1-file": "drivers/gpu/drm/tiny/simpledrm.c",
+                "2-name": "simpledrm_device_create",
+                "4-object": 0,
+                "5-field": false,
+                "6-value": 0,
+                "7-offset": 26,
+                "8-fmt": false
+              }
+            ],
+            "3-structure": "%struct.file_operations",
+            "4-ioctl": 9,
+            "4-open": 13,
+            "4-read": 2,
+            "4-write": 3
+          },
+          "7-dri_name": {
+            "1-offset": 25,
+            "2-function": [
+              {
+                "1-file": "drivers/gpu/drm/drm_drv.c",
+                "2-name": "__devm_drm_dev_alloc",
+                "4-object": 1,
+                "5-field": false,
+                "6-value": 1,
+                "7-offset": 21,
+                "8-fmt": false
+              },
+              {
+                "1-file": "drivers/gpu/drm/drm_drv.c",
+                "2-name": "drm_dev_alloc",
+                "4-object": 0,
+                "5-field": false,
+                "6-value": 0,
+                "7-offset": 21,
+                "8-fmt": false
+              },
+              {
+                "1-file": "drivers/gpu/drm/tiny/simpledrm.c",
+                "2-name": "simpledrm_device_create",
+                "4-object": 0,
+                "5-field": false,
+                "6-value": 0,
+                "7-offset": 21,
+                "8-fmt": false
+              }
+            ],
+            "3-structure": "",
+            "4-ioctl": -2,
+            "4-open": -2,
+            "4-read": -2,
+            "4-write": -2
+          },
+          "8-key_dereference_obj": {
+            "1-name": "drm_stub_fops",
+            "2-open": 14
+          }
+        },
+        {
+          "0-major_value": 0,
+          "1-name": "sound",
+          "2-structure": "struct.snd_minor",
+          "3-dri_ops": {
+            "1-offset": 3,
+            "2-function": [
+              {
+                "1-file": "sound/core/sound.c",
+                "2-name": "snd_register_device",
+                "4-object": -2,
+                "5-field": false,
+                "6-value": 3,
+                "7-offset": -2,
+                "8-fmt": false
+              }
+            ],
+            "3-structure": "struct.file_operations",
+            "4-ioctl": 9,
+            "4-open": 13,
+            "4-read": 2,
+            "4-write": 3
+          },
+          "8-key_dereference_obj": {
+            "1-name": "snd_fops",
+            "2-open": 14
+          }
+        }
+      ]
+    },
+    {
+      "0-major_value": -2,
+      "1-name": "block",
+      "2-structure": "struct.gendisk",
+      "3-dri_ops": {
+        "1-offset": 8,
+        "3-structure": "%struct.block_device_operations",
+        "4-ioctl": 4,
+        "4-open": 2,
+        "4-read": -2,
+        "4-write": -2
+      },
+      "4-dri_type": {
+        "1-offset": -2,
+        "3-structure": "",
+        "4-ioctl": -2,
+        "4-open": -2,
+        "4-read": -2,
+        "4-write": -2
+      },
+      "5-dri_major": {
+        "1-offset": 0,
+        "3-structure": "",
+        "4-ioctl": -2,
+        "4-open": -2,
+        "4-read": -2,
+        "4-write": -2
+      },
+      "6-dri_minor": {
+        "1-offset": 1,
+        "3-structure": "",
+        "4-ioctl": -2,
+        "4-open": -2,
+        "4-read": -2,
+        "4-write": -2
+      },
+      "7-dri_name": {
+        "1-offset": 3,
+        "2-function": [
+          {
+            "1-file": "arch/x86/boot/printf.c",
+            "2-name": "sprintf",
+            "4-object": 0,
+            "5-field": true,
+            "6-value": 1,
+            "7-offset": -2,
+            "8-fmt": true
+          },
+          {
+            "1-file": "arch/x86/boot/printf.c",
+            "2-name": "strncpy",
+            "4-object": 0,
+            "5-field": true,
+            "6-value": 1,
+            "7-offset": -2,
+            "8-fmt": false
+          },
+          {
+            "1-file": "arch/x86/boot/printf.c",
+            "2-name": "strcpy",
+            "4-object": 0,
+            "5-field": true,
+            "6-value": 1,
+            "7-offset": -2,
+            "8-fmt": false
+          }
+        ],
+        "3-structure": "",
+        "4-ioctl": -2,
+        "4-open": -2,
+        "4-read": -2,
+        "4-write": -2
+      },
+      "8-key_dereference_obj": {
+        "1-name": "def_blk_fops",
+        "2-open": 14
+      }
+    }
+  ],
+  "file": {
+    "1-name": "file",
+    "2-structure": "struct.file",
+    "3-fd": {
+      "1-offset": -2,
+      "2-function": [
+        {
+          "1-file": "fs/file.c",
+          "2-name": "get_unused_fd_flags",
+          "4-object": -2,
+          "5-field": false,
+          "6-value": -1,
+          "7-offset": -2,
+          "8-fmt": false
+        },
+        {
+          "1-file": "fs/anon_inodes.c",
+          "2-name": "anon_inode_getfd",
+          "4-object": -2,
+          "5-field": false,
+          "6-value": -1,
+          "7-offset": -2,
+          "8-fmt": false
+        }
+      ],
+      "3-structure": "",
+      "4-ioctl": -2,
+      "4-open": -2,
+      "4-read": -2,
+      "4-write": -2
+    },
+    "4-file_ops": {
+      "1-offset": 3,
+      "2-function": [
+        {
+          "1-file": "fs/file_table.c",
+          "2-name": "alloc_file_pseudo",
+          "4-object": -1,
+          "5-field": false,
+          "6-value": 4,
+          "7-offset": -2,
+          "8-fmt": false
+        },
+        {
+          "1-file": "fs/anon_inodes.c",
+          "2-name": "anon_inode_getfile",
+          "4-object": -1,
+          "5-field": false,
+          "6-value": 1,
+          "7-offset": -2,
+          "8-fmt": false
+        },
+        {
+          "1-file": "fs/anon_inodes.c",
+          "2-name": "anon_inode_getfd",
+          "4-object": -2,
+          "5-field": false,
+          "6-value": 1,
+          "7-offset": -2,
+          "8-fmt": false
+        }
+      ],
+      "3-structure": "%struct.file_operations",
+      "4-ioctl": 9,
+      "4-open": 13,
+      "4-read": 2,
+      "4-write": 3
+    },
+    "5-install": {
+      "1-offset": -2,
+      "2-function": [
+        {
+          "1-file": "fs/file.c",
+          "2-name": "fd_install",
+          "4-object": 1,
+          "5-field": false,
+          "6-value": -2,
+          "7-offset": -2,
+          "8-fmt": false
+        },
+        {
+          "1-file": "fs/anon_inodes.c",
+          "2-name": "anon_inode_getfd",
+          "4-object": -2,
+          "5-field": false,
+          "6-value": -2,
+          "7-offset": -2,
+          "8-fmt": false
+        }
+      ],
+      "3-structure": "",
+      "4-ioctl": -2,
+      "4-open": -2,
+      "4-read": -2,
+      "4-write": -2
+    }
+  }
+}
