@@ -406,7 +406,7 @@
                 "2-name": "drm_dev_alloc",
                 "4-object": 0,
                 "5-field": false,
-                "6-value": 1,
+                "6-value": 0,
                 "7-offset": 27,
                 "8-fmt": false
               },
@@ -443,7 +443,7 @@
                 "2-name": "drm_dev_alloc",
                 "4-object": 0,
                 "5-field": false,
-                "6-value": 1,
+                "6-value": 0,
                 "7-offset": 21,
                 "8-fmt": false
               },
